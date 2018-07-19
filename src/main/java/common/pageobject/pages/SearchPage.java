@@ -3,6 +3,10 @@ package common.pageobject.pages;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+import java.util.List;
 
 public class SearchPage  extends PageObject{
     @FindBy(partialLinkText="login-button")
@@ -14,18 +18,31 @@ public class SearchPage  extends PageObject{
     /*
             SELECTORS
          */
-    private static final String PRINTED_SUMMER_DRESS= "css: #center_column > ul > li.ajax_block_product.col-xs-12.col-sm-6.col-md-4.last-in-line.first-item-of-tablet-line.last-item-of-mobile-line > div > div.left-block > div > a.product_img_link > img";
-
+    private static final String PRINTED_CHIFFON_DRESS= "css: a.product-name[title='Printed Chiffon Dress'] ";
+    private static final String PRODUCTS= "css: a.product-name";
     /*
         ACTIONS
      */
 
 
 
+
     public void clickOnDress(){
-        $(PRINTED_SUMMER_DRESS).click();
-
-
+        $(PRINTED_CHIFFON_DRESS).click();
 
     }
+
+    public boolean checkResultsExist(){
+
+        List<WebElement> myElements = getDriver().findElements(By.cssSelector("a.product-name"));
+
+        if(myElements.size()>0){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+
 }
