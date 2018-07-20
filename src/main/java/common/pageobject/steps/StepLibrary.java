@@ -45,6 +45,21 @@ public class StepLibrary {
 
     }
 
+    @Step("User adds to Quantity and adds to cart")
+    public void increaseQuantityAndAddToCart(int quantity){
+
+        for (int j =1; j<quantity; j++){
+            productPage.addToQuantity();
+        }
+        productPage.addToCart();
+        softly.assertThat(productPage.getCartText()).isEqualTo
+                ("There are "+ String.valueOf(quantity) + " items in your cart");
+
+
+    }
+
+
+
 
 
     }

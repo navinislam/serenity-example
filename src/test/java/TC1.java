@@ -14,6 +14,9 @@ import common.pageobject.steps.StepLibrary;
 
 public class TC1 {
 
+    int quantity = 4;
+
+
     @Managed
     WebDriver driver;
 
@@ -36,9 +39,12 @@ public class TC1 {
         navin.clickOnChiffonDress();
     }
 
-    @Title("User can select a size")
+    @Title("User can select a size, quantity and add to cart")
     @Test
     public void test03(){
         navin.selectsSizeOf("Printed Dress","M");
+        navin.increaseQuantityAndAddToCart(quantity);
+
     }
+
 }
