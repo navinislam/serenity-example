@@ -7,6 +7,11 @@ import java.util.Properties;
 public class BaseConfiguration {
    private Properties configFile;
 
+    /**
+     * To strings.
+     *
+     * Loads base.properties file for driver information
+     */
    public BaseConfiguration()
    {
        configFile = new Properties();

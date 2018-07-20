@@ -21,6 +21,12 @@ public class StepLibrary {
     }
 
 
+    /**
+     * Searches for items and makes sure that results is >0
+     *
+     *
+     */
+
     @Step("User searches for Printed Dress")
     public void searchForItem(String item){
         homepage.searchItem(item);
@@ -29,11 +35,23 @@ public class StepLibrary {
 
     }
 
+    /**
+     * clicks on chiffon dress
+     *
+     */
+
     @Step("User clicks on Printed Chiffon Dress")
     public void clickOnChiffonDress(){
         searchPage.clickOnDress();
 
     }
+
+
+    /**
+     * User selects given size
+     * Makes sure that correct size is selected
+     *
+     */
 
     @Step("User selects a size")
     public void selectsSizeOf(String item,String size){
@@ -45,6 +63,11 @@ public class StepLibrary {
 
     }
 
+
+    /**
+     * Increases quantity and adds to cart
+     * Makes sure that correct number of items is in cart
+     */
     @Step("User adds to Quantity and adds to cart")
     public void increaseQuantityAndAddToCart(int quantity){
 

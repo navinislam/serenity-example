@@ -12,6 +12,10 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class AutoDownloadedWebDriver implements DriverSource {
+    /**
+     *
+     * Downloads driver based on config in base.properties
+     */
     public enum WebBrowsers {
         CHROME, CHROME_HEADLESS, CHROME_ON_GRID
     }
